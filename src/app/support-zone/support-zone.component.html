@@ -1,0 +1,21 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo">Logo</a>
+    <a href="#" data-activates="mobile-demo" class="button-collapse">
+      <i class="material-icons">menu</i>
+    </a>
+    <ul class="right hide-on-med-and-down">
+      <li><a routerLink="/support/company-list">Company</a></li>
+      <li><a routerLink="/support/customer-list">Customer</a></li>
+      <li><a routerLink="/support/user-list">User</a></li>
+      <li><a routerLink="/support/issue-list">Issue</a></li>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <li><a routerLink="/support/company-list">Company</a></li>
+      <li><a routerLink="/support/customer-list">Customer</a></li>
+      <li><a routerLink="/support/user-list">User</a></li>
+      <li><a routerLink="/support/issue-list">Issue</a></li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>

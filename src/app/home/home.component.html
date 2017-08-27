@@ -1,0 +1,19 @@
+<p *ngIf="show">
+  home works!
+  {{title}}
+</p>
+<a class="btn" (click)="onClick();"> OK</a>
+
+ <ul class="collection">
+  <li class="collection-item" *ngFor="let item of list" [ngClass]="{'active': isActive}">{{item}}</li>
+</ul>
+
+<div [ngSwitch]="conditionExpression">
+  <ng-template [ngSwitchCase]="case1Exp">One</ng-template>
+  <ng-template ngSwitchCase="A">Two</ng-template>
+  <ng-template ngSwitchDefault>Three</ng-template>
+</div>
+
+<h1>{{price | number:'1.2-3'}}</h1>
+<h1>{{currentDate | date:'dd/MM/y'}}</h1>
+<h1>{{title | transf}}</h1>

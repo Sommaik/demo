@@ -1,0 +1,50 @@
+<nav class="">
+  <div class="nav-wrapper">
+    <form>
+      <div class="input-field">
+        <input name="search" id="search" type="search" required [(ngModel)]="searchText">
+        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+        <i class="material-icons" (click)="search()">find_in_page</i>
+      </div>
+    </form>
+  </div>
+</nav>
+<table>
+  <thead>
+    <tr>
+      <th>Edit</th>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let comp of companyData; let i = index;">
+      <td>
+        <a class="btn-floating btn waves-effect waves-light blue darken-3" (click)="onEditButtonClick(comp._id);">
+          <i class="material-icons">edit</i>
+        </a>
+      </td>
+      <td>{{comp.compCode}}</td>
+      <td>{{comp.compName}}</td>
+      <td>
+        <a class="btn-floating btn waves-effect waves-light red darken-3" (click)="onDeleteButtonClick(comp._id);">
+          <i class="material-icons">delete</i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<ul class="pagination">
+  <li class="waves-effect" 
+  *ngFor="let p of paging; let i = index;" 
+  [ngClass]="{'active' : i == numPage }" 
+  (click)="gotoPage(i);">
+    <a>{{p}}</a>
+  </li>
+</ul>
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large red" (click)="onAddButtonClick()">
+      <i class="large material-icons">add</i>
+    </a>
+</div>
