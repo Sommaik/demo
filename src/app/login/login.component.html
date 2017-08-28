@@ -5,18 +5,19 @@
     </div>
     <div class="input-field col s12 m4 offset-m4">
       <i class="material-icons prefix">account_circle</i>
-      <input id="email" name="email" [(ngModel)]="email" required="required" #email_f ="ngModel"
+      <input id="email" name="email" [(ngModel)]="login.email" required="required" #email_f ="ngModel"
              type="email" class="validate" placeholder="please input your email">
       <label for="email" data-error="xxxx">Email</label>
     </div>
     <div class="input-field col s12 m4 offset-m4">
       <i class="material-icons prefix">lock</i>
-      <input id="password" name="password" [(ngModel)]="password" required="required"
+      <input id="password" name="password" [(ngModel)]="login.password" required="required"
              type="password" class="validate" pattern="\d{3,8}" placeholder="please input your password">
       <label for="password">Password</label>
     </div>
     <button type="submit" class="col s10 offset-s1 m4 offset-m4 btn blue darken-3" [disabled]="!loginForm.form.valid" >Login</button>
   </div>
 </form>
-
-<input type="text" [(ngModel)]="numInput">
+<h5>
+  {{login | json}}
+</h5>

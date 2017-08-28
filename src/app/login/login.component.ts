@@ -1,34 +1,46 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm, FormControl } from '@angular/forms';
+import { LoginService } from '../shared/user/login.service';
+import { Login } from '../shared/user/login';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [LoginService]
 })
 export class LoginComponent implements OnInit {
+  // email:string;
+  // password:string;
+  login: Login;
 
-  constructor(private router:Router) { 
-
+  constructor(
+    private router: Router,
+    private loginService: LoginService
+  ) {
+    this.login = new Login();
   }
 
-  @ViewChild('loginForm') loginForm:NgForm;
-  
-  email:string;
-  password:string;
+  @ViewChild('loginForm') loginForm: NgForm;
 
   ngOnInit() {
 
   }
 
-  doLogin(){
-    console.log(this.loginForm.valid);
-    if($(".invalid").length > 0){
+  doLogin() {
+    if ($(".invalid").length > 0) {
       Materialize.toast('Invalid', 1000);
-    }else{
-      localStorage.setItem('token', 'login');
-      this.router.navigate(['support','issue-list']);
+    } else {
+      this.loginService.doLogin(this.login).subscribe((res) => {
+        if (res.success) {
+          localStorage.setItem('token', res.token);
+          this.router.navigate(['support', 'issue-list']);
+        } else {
+          Materialize.toast(res.message, 1000);
+        }
+      });
+
     }
   }
 
