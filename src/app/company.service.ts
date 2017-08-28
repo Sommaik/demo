@@ -8,10 +8,18 @@ import { environment } from '../environments/environment';
 @Injectable()
 export class CompanyService {
 
-  constructor(private http: Http) { }
+  options: RequestOptions;
+
+  constructor(private http: Http) {
+    let headers = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': 'bearer ' + localStorage.getItem('token')
+    });
+    this.options = new RequestOptions({ headers: headers });
+  }
 
   loadItem(): Observable<any[]> {
-    return this.http.get(`${environment.apiUrl}/company`)
+    return this.http.get(`${environment.apiUrl}/company`, this.options)
       .map((res: Response) => {
         return res.json();
       })
@@ -20,12 +28,8 @@ export class CompanyService {
 
   addItem(body): Observable<any> {
     let bodyString = JSON.stringify(body);
-    let headers = new Headers({
-      'Content-Type': 'application/json'
-    });
-    let options = new RequestOptions({ headers: headers });
     return this.http.post(
-      `${environment.apiUrl}/company`, bodyString, options)
+      `${environment.apiUrl}/company`, bodyString, this.options)
       .map((res: Response) => {
         return res.json()
       })
@@ -33,7 +37,7 @@ export class CompanyService {
   }
 
   deleteItem(id): Observable<any[]> {
-    return this.http.delete(`${environment.apiUrl}/company/${id}`)
+    return this.http.delete(`${environment.apiUrl}/company/${id}`, this.options)
       .map((res: Response) => {
         return res.json();
       })
@@ -42,21 +46,18 @@ export class CompanyService {
 
   findById(id): Observable<any> {
     return this.http.get(
-      `${environment.apiUrl}/company/findById/${id}`
-      ).map((res: Response) => {
-        return res.json();
-      })
+      `${environment.apiUrl}/company/findById/${id}`,
+      this.options
+    ).map((res: Response) => {
+      return res.json();
+    })
       .catch((error: any) => Observable.throw(error));
   }
 
   updateItem(id, body): Observable<any> {
     let bodyString = JSON.stringify(body);
-    let headers = new Headers({
-      'Content-Type': 'application/json'
-    });
-    let options = new RequestOptions({ headers: headers });
     return this.http.put(
-      `${environment.apiUrl}/company/${id}`, bodyString, options)
+      `${environment.apiUrl}/company/${id}`, bodyString, this.options)
       .map((res: Response) => {
         return res.json()
       })
@@ -65,12 +66,8 @@ export class CompanyService {
 
   search(body): Observable<any> {
     let bodyString = JSON.stringify(body);
-    let headers = new Headers({
-      'Content-Type': 'application/json'
-    });
-    let options = new RequestOptions({ headers: headers });
     return this.http.post(
-      `${environment.apiUrl}/company/search`, bodyString, options)
+      `${environment.apiUrl}/company/search`, bodyString, this.options)
       .map((res: Response) => {
         return res.json()
       })
