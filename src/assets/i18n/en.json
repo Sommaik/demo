@@ -1,4 +1,5 @@
 {
     "email":"email",
-    "password":"Password"
+    "password":"Password",
+    "home": "Home"
 }

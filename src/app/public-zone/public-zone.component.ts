@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-public-zone',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PublicZoneComponent implements OnInit {
 
-  constructor() { }
+  currentLang = "th";
+
+  constructor(private tranService: TranslateService) { }
 
   ngOnInit() {
+  }
+
+  changeLang(){
+    this.currentLang = this.currentLang=="en"?"th":"en";
+    this.tranService.use(this.currentLang);
   }
 
 }
