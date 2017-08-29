@@ -1,5 +1,15 @@
-{
-    "email":"email",
-    "password":"Password",
-    "home": "Home"
+{  
+    "public": {
+        "home" : "Home",
+        "login": "login"
+    },
+    "login" : {
+        "email" : "E-Mail",
+        "password":"Password",
+        "email-error" : "Invalid e-mail",
+        "password-error" : "Invalid password",
+        "email-placeholder" : "Please input your e-mail",
+        "password-placeholder" : "Please input your password",
+        "login-button" : "Login"
+    }
 }

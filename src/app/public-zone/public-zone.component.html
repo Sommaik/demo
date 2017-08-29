@@ -3,15 +3,15 @@
         <a href="#!" class="brand-logo">Logo</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-            <li><a routerLink="/login">Login</a></li>
-            <li><a routerLink="/home">{{'home' | translate}}</a></li>
+            <li><a routerLink="/login">{{'public.login' | translate}}</a></li>
+            <li><a routerLink="/home">{{'public.home' | translate}}</a></li>
             <li>
                 <a class="btn" (click)="changeLang();">{{currentLang}}</a>
             </li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-            <li><a routerLink="/login">Login</a></li>
-            <li><a routerLink="/home">Home</a></li>
+            <li><a routerLink="/login">{{'public.login' | translate}}</a></li>
+            <li><a routerLink="/home">{{'public.home' | translate}}</a></li>
         </ul>
     </div>
 </nav>

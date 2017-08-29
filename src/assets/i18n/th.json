@@ -1,5 +1,15 @@
-{
-    "email":"อีเมล์",
-    "password":"รหัสผ่าน",
-    "home":"หน้าแรก"
+{  
+    "public": {
+        "home" : "หน้าหลัก",
+        "login": "เข้าสู่ระบบ"
+    },
+    "login" : {
+        "email" : "อีเมล์",
+        "password":"รหัสผ่าน",
+        "email-error" : "อีเมล์ไม่ถูกต้อง",
+        "password-error" : "รหัสผ่านไม่ถูกต้อง",
+        "email-placeholder" : "กรุณาระบุอีเมล์ของท่าน",
+        "password-placeholder" : "กรุณาระบุรหัสผ่านของท่าน",
+        "login-button" : "เข้าสู่ระบบ"
+    }
 }
