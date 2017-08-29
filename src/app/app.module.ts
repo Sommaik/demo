@@ -20,6 +20,14 @@ import { IssueListComponent } from './issue-list/issue-list.component';
 import { LoginGuardService } from './login-guard.service';
 import { TransfPipe } from './transf.pipe';
 
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +50,14 @@ import { TransfPipe } from './transf.pipe';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [LoginGuardService],
   bootstrap: [AppComponent]
