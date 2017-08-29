@@ -11,5 +11,17 @@
         "email-placeholder" : "Please input your e-mail",
         "password-placeholder" : "Please input your password",
         "login-button" : "Login"
+    },
+    "support": {
+        "company":"Company",
+        "customer":"Customer",
+        "user":"User",
+        "issue":"Issue"
+    },
+    "company" : {
+        "edit":"Edit",
+        "code":"Code",
+        "name":"Name",
+        "delete":"Delete"
     }
 }

@@ -4,13 +4,13 @@ interface NodeModule {
   id: string;
 }
 
-declare function $(arr: string): JQuery;
+// declare function $(arr: string): JQuery;
 
-interface JQuery {
-  length:number
-}
+// interface JQuery {
+//   length:number
+// }
 
-declare let Materialize : {
-    toast(text, time): any;
-    updateTextFields(): any;
-};
+// declare let Materialize : {
+//     toast(text, time): any;
+//     updateTextFields(): any;
+// };

@@ -11,5 +11,11 @@
         "email-placeholder" : "กรุณาระบุอีเมล์ของท่าน",
         "password-placeholder" : "กรุณาระบุรหัสผ่านของท่าน",
         "login-button" : "เข้าสู่ระบบ"
+    },
+    "company" : {
+        "edit":"แก้ไข",
+        "code":"รหัส",
+        "name":"ชื่อบริษัท",
+        "delete":"ลบ"
     }
 }
