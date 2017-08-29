@@ -8,17 +8,19 @@ import { CompanyService } from '../company.service';
   selector: 'app-customer',
   templateUrl: './customer.component.html',
   styleUrls: ['./customer.component.css'],
-  providers: [CustomerService]
+  providers: [CustomerService, CompanyService]
 })
 export class CustomerComponent implements OnInit {
 
-  customer:Customer;
+  customer: Customer;
   companyData = [];
+
   constructor(
     private router: Router,
     private activeRoute: ActivatedRoute,
     private customerService: CustomerService,
-  ) { 
+    private companyService: CompanyService
+  ) {
     this.customer = new Customer();
   }
 
@@ -27,16 +29,20 @@ export class CustomerComponent implements OnInit {
 
   ngOnInit() {
     this.activeRoute.params.subscribe(params => {
+      this.companyService.loadItem().subscribe((data) => {
+        this.companyData = data;
+        setTimeout(() => {
+          $('select').material_select();
+        }, 100);
+      });
       if (params['id']) {
         let id = params['id'];
-        
         this.customerService.findById(id).subscribe(
           customer => {
             this.customer = customer;
             setTimeout(() => {
               Materialize.updateTextFields();
-              $('select').material_select();
-            }, 50);
+            }, 1000);
           }, error => {
             console.log(error);
           });
