@@ -1,11 +1,11 @@
 <nav>
   <div class="nav-wrapper">
     <a href="#!" class="brand-logo">Logo</a>
-    <a href="#" data-activates="mobile-demo" class="button-collapse">
+    <a href="#" data-activates="mobile-demo" class="button-collapse" materialize="sideNav" [materializeParams]="[{closeOnClick: true, draggable:true}]">
       <i class="material-icons">menu</i>
     </a>
     <ul class="right hide-on-med-and-down">
-      <li routerLinkActive="active" ><a routerLink="/support/company-list">{{'support.company' | translate}}</a></li>
+      <li routerLinkActive="active"><a routerLink="/support/company-list">{{'support.company' | translate}}</a></li>
       <li routerLinkActive="active"><a routerLink="/support/customer-list">{{'support.customer' | translate}}</a></li>
       <li routerLinkActive="active"><a routerLink="/support/user-list">{{'support.user' | translate}}</a></li>
       <li routerLinkActive="active"><a routerLink="/support/issue-list">{{'support.issue' | translate}}</a></li>

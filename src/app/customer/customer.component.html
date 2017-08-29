@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" materialize="updateTextFields">
   <div class="row">
     <div class="input-field col s12">
       <input [(ngModel)]="customer.custCode" [placeholder]="'customer.code' | translate" id="cust_code" type="text" class="validate">
@@ -9,13 +9,17 @@
       <label for="cust_name">{{'customer.name' | translate}}</label>
     </div>
     <div class="input-field col s12">
-      <select [(ngModel)]="customer.compCode"> 
+      <select [(ngModel)]="customer.compCode" materialize="material_select" [materializeSelectOptions]="companyData"> 
         <option value="" disabled selected>Choose your option</option>
         <option *ngFor="let comp of companyData;" 
-          value="comp.compCode">{{comp.compName}}</option>
+          [value]="comp.compCode">{{comp.compName}}</option>
       </select>
       <label>{{'company.code' | translate}}</label>
     </div>
     <a class="btn col s12" (click)="onSave();">Save</a>
   </div>
 </div>
+
+<p>
+  {{customer | json}}
+</p>

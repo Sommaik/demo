@@ -13,7 +13,6 @@ export class PublicZoneComponent implements OnInit {
   constructor(private tranService: TranslateService) { }
 
   ngOnInit() {
-    $(".button-collapse").sideNav();
   }
 
   changeLang(){

@@ -28,21 +28,17 @@ export class CustomerComponent implements OnInit {
   id: number = 0;
 
   ngOnInit() {
-    this.activeRoute.params.subscribe(params => {
-      this.companyService.loadItem().subscribe((data) => {
+    this.companyService.loadItem().subscribe({
+      next: (data) => {
         this.companyData = data;
-        setTimeout(() => {
-          $('select').material_select();
-        }, 100);
-      });
+      }
+    });
+    this.activeRoute.params.subscribe(params => {
       if (params['id']) {
         let id = params['id'];
         this.customerService.findById(id).subscribe(
           customer => {
             this.customer = customer;
-            setTimeout(() => {
-              Materialize.updateTextFields();
-            }, 1000);
           }, error => {
             console.log(error);
           });

@@ -55,6 +55,7 @@ export class CustomerService {
     }
   
     updateItem(id, body): Observable<any> {
+      delete body._id;
       let bodyString = JSON.stringify(body);
       return this.http.put(
         `${environment.apiUrl}/customer/${id}`, bodyString, this.options)

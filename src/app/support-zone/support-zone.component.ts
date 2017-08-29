@@ -13,10 +13,6 @@ export class SupportZoneComponent implements OnInit {
   }
 
   ngOnInit() {
-    $(".button-collapse").sideNav({
-      closeOnClick: true,
-      draggable: true
-    });
   }
 
   changeLang() {

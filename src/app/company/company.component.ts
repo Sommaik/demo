@@ -25,15 +25,10 @@ export class CompanyComponent implements OnInit {
     this.activeRoute.params.subscribe(params => {
       if (params['id']) {
         let id = params['id'];
-        // let companyData = JSON.parse(localStorage.getItem('company'));
-        // let company = companyData[id];
         this.companyService.findById(id).subscribe(
           company => {
             this.compCode = company.compCode;
             this.compName = company.compName;
-            setTimeout(() => {
-              Materialize.updateTextFields();
-            }, 50);
           }, error => {
             console.log(error);
           });
