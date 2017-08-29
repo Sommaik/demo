@@ -67,7 +67,7 @@ export class CompanyService {
   search(body): Observable<any> {
     let bodyString = JSON.stringify(body);
     return this.http.post(
-      `${environment.apiUrl}/company/search`, bodyString, this.options)
+      `${environment.apiUrl}/company/find`, bodyString, this.options)
       .map((res: Response) => {
         return res.json()
       })

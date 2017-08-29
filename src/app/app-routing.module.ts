@@ -48,16 +48,25 @@ const routes: Routes = [
       path : 'customer',
       component : CustomerComponent
     },{
+      path : 'customer/:id',
+      component : CustomerComponent
+    },{
       path : 'customer-list',
       component : CustomerListComponent
     },{
       path : 'user',
       component : UserComponent
     },{
+      path : 'user/:id',
+      component : UserComponent
+    },{
       path : 'user-list',
       component : UserListComponent
     },{
       path : 'issue',
+      component : IssueComponent
+    },{
+      path : 'issue/:id',
       component : IssueComponent
     },{
       path : 'issue-list',

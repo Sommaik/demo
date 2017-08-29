@@ -20,8 +20,14 @@
     },
     "company" : {
         "edit":"Edit",
-        "code":"Code",
-        "name":"Name",
+        "code":"Company Code",
+        "name":"Company Name",
+        "delete":"Delete"
+    },
+    "customer" : {
+        "edit":"Edit",
+        "code":"Customer Code",
+        "name":"Customer Name",
         "delete":"Delete"
     }
 }

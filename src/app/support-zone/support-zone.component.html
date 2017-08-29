@@ -5,18 +5,18 @@
       <i class="material-icons">menu</i>
     </a>
     <ul class="right hide-on-med-and-down">
-      <li><a routerLink="/support/company-list">{{'support.company' | translate}}</a></li>
-      <li><a routerLink="/support/customer-list">{{'support.customer' | translate}}</a></li>
-      <li><a routerLink="/support/user-list">{{'support.user' | translate}}</a></li>
-      <li><a routerLink="/support/issue-list">{{'support.issue' | translate}}</a></li>
-      <li><a class="btn wave-effect" (click)="changeLang()">{{currentLang}}</a></li>
+      <li routerLinkActive="active" ><a routerLink="/support/company-list">{{'support.company' | translate}}</a></li>
+      <li routerLinkActive="active"><a routerLink="/support/customer-list">{{'support.customer' | translate}}</a></li>
+      <li routerLinkActive="active"><a routerLink="/support/user-list">{{'support.user' | translate}}</a></li>
+      <li routerLinkActive="active"><a routerLink="/support/issue-list">{{'support.issue' | translate}}</a></li>
+      <li routerLinkActive="active"><a class="btn wave-effect" (click)="changeLang()">{{currentLang}}</a></li>
     </ul>
     <ul class="side-nav" id="mobile-demo">
-      <li><a routerLink="/support/company-list">{{'support.company' | translate}}</a></li>
-      <li><a routerLink="/support/customer-list">{{'support.customer' | translate}}</a></li>
-      <li><a routerLink="/support/user-list">{{'support.user' | translate}}</a></li>
-      <li><a routerLink="/support/issue-list">{{'support.issue' | translate}}</a></li>
-      <li><a class="btn wave-effect" (click)="changeLang()">{{currentLang}}</a></li>
+      <li routerLinkActive="active"><a routerLink="/support/company-list">{{'support.company' | translate}}</a></li>
+      <li routerLinkActive="active"><a routerLink="/support/customer-list">{{'support.customer' | translate}}</a></li>
+      <li routerLinkActive="active"><a routerLink="/support/user-list">{{'support.user' | translate}}</a></li>
+      <li routerLinkActive="active"><a routerLink="/support/issue-list">{{'support.issue' | translate}}</a></li>
+      <li routerLinkActive="active"><a class="btn wave-effect" (click)="changeLang()">{{currentLang}}</a></li>
     </ul>
   </div>
 </nav>
