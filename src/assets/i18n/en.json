@@ -1,33 +1,42 @@
-{  
+{
     "public": {
-        "home" : "Home",
+        "home": "Home",
         "login": "login"
     },
-    "login" : {
-        "email" : "E-Mail",
-        "password":"Password",
-        "email-error" : "Invalid e-mail",
-        "password-error" : "Invalid password",
-        "email-placeholder" : "Please input your e-mail",
-        "password-placeholder" : "Please input your password",
-        "login-button" : "Login"
+    "login": {
+        "email": "E-Mail",
+        "password": "Password",
+        "email-error": "Invalid e-mail",
+        "password-error": "Invalid password",
+        "email-placeholder": "Please input your e-mail",
+        "password-placeholder": "Please input your password",
+        "login-button": "Login"
     },
     "support": {
-        "company":"Company",
-        "customer":"Customer",
-        "user":"User",
-        "issue":"Issue"
+        "company": "Company",
+        "customer": "Customer",
+        "user": "User",
+        "issue": "Issue"
     },
-    "company" : {
-        "edit":"Edit",
-        "code":"Company Code",
-        "name":"Company Name",
-        "delete":"Delete"
+    "company": {
+        "edit": "Edit",
+        "code": "Company Code",
+        "name": "Company Name",
+        "delete": "Delete"
     },
-    "customer" : {
-        "edit":"Edit",
-        "code":"Customer Code",
-        "name":"Customer Name",
-        "delete":"Delete"
+    "customer": {
+        "edit": "Edit",
+        "code": "Customer Code",
+        "name": "Customer Name",
+        "delete": "Delete"
+    },
+    "user": {
+        "email": "E-Mail",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "password": "Password",
+        "re_password": "Re-Password",
+        "mobile": "Mobile Phone",
+        "picture": "Picture"
     }
 }
