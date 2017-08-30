@@ -9,7 +9,9 @@
       <label for="cust_name">{{'customer.name' | translate}}</label>
     </div>
     <div class="input-field col s12">
-      <select [(ngModel)]="customer.compCode" materialize="material_select" [materializeSelectOptions]="companyData"> 
+      <select [(ngModel)]="customer.compCode" 
+        materialize="material_select" 
+        [materializeSelectOptions]="companyData"> 
         <option value="" disabled selected>Choose your option</option>
         <option *ngFor="let comp of companyData;" 
           [value]="comp.compCode">{{comp.compName}}</option>
