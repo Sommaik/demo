@@ -1,27 +1,27 @@
 <div class="container">
   <div class="row" materialize="updateTextFields">
     <div class="input-field col s12 m6">
-      <input [placeholder]="'user.firstName' | translate" id="firstName" type="text" class="validate">
+      <input [(ngModel)]="user.firstName" [placeholder]="'user.firstName' | translate" id="firstName" type="text" class="validate">
       <label for="firstName">{{'user.firstName' | translate}}</label>
     </div>
     <div class="input-field col s12 m6">
-      <input [placeholder]="'user.lastName' | translate" id="lastName" type="text" class="validate">
+      <input [(ngModel)]="user.lastName" [placeholder]="'user.lastName' | translate" id="lastName" type="text" class="validate">
       <label for="lastName">{{'user.lastName' | translate}}</label>
     </div>
     <div class="input-field col s12 m6">
-      <input [placeholder]="'user.email' | translate" id="email" type="email" class="validate">
+      <input [(ngModel)]="user.email" [placeholder]="'user.email' | translate" id="email" type="email" class="validate">
       <label for="email">{{'user.email' | translate}}</label>
     </div>
     <div class="input-field col s12 m6">
-      <input [placeholder]="'user.mobile' | translate" id="mobile" type="text" class="validate">
+      <input [(ngModel)]="user.mobile" [placeholder]="'user.mobile' | translate" id="mobile" type="text" class="validate">
       <label for="mobile">{{'user.mobile' | translate}}</label>
     </div>
     <div class="input-field col s12 m6">
-      <input [placeholder]="'user.password' | translate" id="password" type="password" class="validate">
+      <input [(ngModel)]="user.password" [placeholder]="'user.password' | translate" id="password" type="password" class="validate">
       <label for="password">{{'user.password' | translate}}</label>
     </div>
     <div class="input-field col s12 m6">
-      <input [placeholder]="'user.re_password' | translate" id="re_password" type="password" class="validate">
+      <input [(ngModel)]="user.rePassword" [placeholder]="'user.re_password' | translate" id="re_password" type="password" class="validate">
       <label for="re_password">{{'user.re_password' | translate}}</label>
     </div>
   </div>
@@ -40,3 +40,5 @@
     <a class="btn col s12" (click)="onSave();">Save</a>
   </div>
 </div>
+
+<h5>{{user | json}}</h5>
