@@ -1,24 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../shared/user/user';
 import { UserService } from '../shared/user/user.service';
+import { UploadService } from '../shared/user/upload.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css'],
-  providers: [UserService]
+  providers: [UserService, UploadService]
 })
 export class UserComponent implements OnInit {
 
   user: User;
   mode: string = "ADD";
-  id: number = 0;
+  id: string = "";
+  filesToUpload = [];
 
   constructor(
     private userService: UserService,
     private router: Router,
     private activeRoute: ActivatedRoute,
+    private uploadService: UploadService
   ) {
     this.user = new User();
   }
@@ -29,7 +33,7 @@ export class UserComponent implements OnInit {
         let id = params['id'];
         this.userService.findById(id).subscribe(
           user => {
-            this.user = user;
+            this.user = user._id;
           }, error => {
             console.log(error);
           });
@@ -53,8 +57,8 @@ export class UserComponent implements OnInit {
     } else {
       this.userService.addItem(this.user).subscribe(
         datas => {
-          Materialize.toast('Add new item complete', 1000);
-          this.router.navigate(['support', 'user-list']);
+          this.id = this.user._id;
+          this.upload();
         },
         err => {
           console.log(err);
@@ -63,4 +67,17 @@ export class UserComponent implements OnInit {
     }
   }
 
+  fileChangeEvent(fileInput) {
+    this.filesToUpload = <Array<File>>fileInput.target.files;
+  }
+
+  upload() {
+    this.uploadService.makeFileRequest(
+      "avatar",
+      environment.apiUrl + "/user/profile/" + this.id, 
+      [], this.filesToUpload).subscribe((res) => {
+        Materialize.toast('save complete.', 1000);
+        this.router.navigate(['support', 'user-list']);
+    })
+  }
 }
