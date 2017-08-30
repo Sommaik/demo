@@ -33,7 +33,7 @@ export class UserComponent implements OnInit {
         let id = params['id'];
         this.userService.findById(id).subscribe(
           user => {
-            this.user = user._id;
+            this.user = user;
           }, error => {
             console.log(error);
           });
@@ -47,8 +47,8 @@ export class UserComponent implements OnInit {
     if (this.mode === "EDIT") {
       this.userService.updateItem(this.id, this.user).subscribe(
         data => {
-          Materialize.toast('Update item complete', 1000);
-          this.router.navigate(['support', 'user-list']);
+          Materialize.toast('update complete.', 1000);
+          this.upload();
         },
         err => {
           console.log(err);
@@ -58,6 +58,7 @@ export class UserComponent implements OnInit {
       this.userService.addItem(this.user).subscribe(
         datas => {
           this.id = datas._id;
+          Materialize.toast('save complete.', 1000);
           this.upload();
         },
         err => {
@@ -72,12 +73,16 @@ export class UserComponent implements OnInit {
   }
 
   upload() {
-    this.uploadService.makeFileRequest(
-      "avatar",
-      environment.apiUrl + "/user/profile/" + this.id, 
-      [], this.filesToUpload).subscribe((res) => {
-        Materialize.toast('save complete.', 1000);
-        this.router.navigate(['support', 'user-list']);
-    })
+    if (this.filesToUpload.length > 0) {
+      this.uploadService.makeFileRequest(
+        "avatar",
+        environment.apiUrl + "/user/profile/" + this.id,
+        [], this.filesToUpload).subscribe((res) => {
+          this.router.navigate(['support', 'user-list']);
+      });
+    }else{
+      this.router.navigate(['support', 'user-list']);
+    }
+
   }
 }

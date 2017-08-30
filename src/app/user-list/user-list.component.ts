@@ -26,6 +26,10 @@ export class UserListComponent implements OnInit {
     this.router.navigate(['support', 'user']);
   }
 
+  onEditButtonClick(id) {
+    this.router.navigate(['support', 'user', id]);
+  }
+
   onDeleteClick(id){
     this.userService.deleteItem(id).subscribe((datas)=>{
       this.loadData();
