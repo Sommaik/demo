@@ -9,7 +9,7 @@ export class UploadService {
 
   constructor(private http: Http) { }
 
-  makeFileRequest(fildname:string, url: string, params: any, fileList: Array<File>) : Observable<any> {
+  makeFileRequest(fildname: string, url: string, params: any, fileList: Array<File>): Observable<any> {
     if (fileList.length > 0) {
       let file: File = fileList[0];
       let formData: FormData = new FormData();
@@ -27,8 +27,10 @@ export class UploadService {
         headers: headers
       });
       return this.http.post(url, formData, options)
-        .map(res => res.json())
-        .catch(error => Observable.throw(error));
+        .map((res: Response) => {
+          return res.json();
+        })
+        .catch((error: any) => Observable.throw(error));
     }
   }
 

@@ -29,7 +29,8 @@
     <div class="file-field input-field">
       <div class="btn">
         <span>{{'user.picture' | translate}}</span>
-        <input type="file" name="avatar">
+        <input type="file" name="avatar" 
+          (change)="fileChangeEvent($event)">
       </div>
       <div class="file-path-wrapper">
         <input class="file-path validate" type="text">

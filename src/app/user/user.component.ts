@@ -16,7 +16,7 @@ export class UserComponent implements OnInit {
   user: User;
   mode: string = "ADD";
   id: string = "";
-  filesToUpload = [];
+  filesToUpload: Array<File>;
 
   constructor(
     private userService: UserService,
@@ -57,7 +57,7 @@ export class UserComponent implements OnInit {
     } else {
       this.userService.addItem(this.user).subscribe(
         datas => {
-          this.id = this.user._id;
+          this.id = datas._id;
           this.upload();
         },
         err => {
