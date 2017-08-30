@@ -30,13 +30,14 @@
       <div class="btn">
         <span>{{'user.picture' | translate}}</span>
         <input type="file" name="avatar" 
-          (change)="fileChangeEvent($event)">
+          (change)="fileChangeEvent($event);readUrl($event);">
       </div>
       <div class="file-path-wrapper">
         <input class="file-path validate" type="text">
       </div>
     </div>
   </form>
+  <img [src]="url" alt="" />
   <div class="row">
     <a class="btn col s12" (click)="onSave();">Save</a>
   </div>
