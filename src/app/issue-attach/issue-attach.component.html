@@ -1,0 +1,30 @@
+<div class="container">
+
+  <form action="#">
+    <div class="file-field input-field">
+      <div class="btn">
+        <span>File</span>
+        <input type="file">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+    </div>
+  </form>
+  
+  <div class="row">
+    <a class="col s12 waves-effect waves-light btn">Attatch</a>
+  </div>
+
+  <ul class="collection with-header">
+    <li class="collection-header">
+      <h4>Attach File</h4>
+    </li>
+    <li class="collection-item" *ngFor="let f of [1,2,3,4,5]">
+      <div>File Name<a href="#!" class="secondary-content">
+      <i class="material-icons">send</i>
+    </a>
+      </div>
+    </li>
+  </ul>
+</div>

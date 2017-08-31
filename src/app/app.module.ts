@@ -24,6 +24,7 @@ import { TransfPipe } from './transf.pipe';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { IssueAttachComponent } from './issue-attach/issue-attach.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -44,7 +45,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     UserListComponent,
     IssueComponent,
     IssueListComponent,
-    TransfPipe
+    TransfPipe,
+    IssueAttachComponent
   ],
   imports: [
     MaterializeModule,

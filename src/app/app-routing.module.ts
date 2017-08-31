@@ -13,19 +13,20 @@ import { UserListComponent } from './user-list/user-list.component';
 import { IssueComponent } from './issue/issue.component';
 import { IssueListComponent } from './issue-list/issue-list.component';
 import { LoginGuardService } from './login-guard.service';
+import { IssueAttachComponent } from './issue-attach/issue-attach.component';
 const routes: Routes = [
   {
     path: '',
     component: PublicZoneComponent,
     children: [{
-      path : '',
-      component : HomeComponent
-    },{
-      path : 'home',
-      component : HomeComponent
-    },{
-      path : 'login',
-      component : LoginComponent
+      path: '',
+      component: HomeComponent
+    }, {
+      path: 'home',
+      component: HomeComponent
+    }, {
+      path: 'login',
+      component: LoginComponent
     }]
   },
   {
@@ -33,44 +34,47 @@ const routes: Routes = [
     component: SupportZoneComponent,
     canActivate: [LoginGuardService],
     children: [{
-      path : '',
-      component : IssueListComponent
-    },{
-      path : 'company',
-      component : CompanyComponent
-    },{
-      path : 'company/:id',
-      component : CompanyComponent
-    },{
-      path : 'company-list',
-      component : CompanyListComponent
-    },{
-      path : 'customer',
-      component : CustomerComponent
-    },{
-      path : 'customer/:id',
-      component : CustomerComponent
-    },{
-      path : 'customer-list',
-      component : CustomerListComponent
-    },{
-      path : 'user',
-      component : UserComponent
-    },{
-      path : 'user/:id',
-      component : UserComponent
-    },{
-      path : 'user-list',
-      component : UserListComponent
-    },{
-      path : 'issue',
-      component : IssueComponent
-    },{
-      path : 'issue/:id',
-      component : IssueComponent
-    },{
-      path : 'issue-list',
-      component : IssueListComponent
+      path: '',
+      component: IssueListComponent
+    }, {
+      path: 'company',
+      component: CompanyComponent
+    }, {
+      path: 'company/:id',
+      component: CompanyComponent
+    }, {
+      path: 'company-list',
+      component: CompanyListComponent
+    }, {
+      path: 'customer',
+      component: CustomerComponent
+    }, {
+      path: 'customer/:id',
+      component: CustomerComponent
+    }, {
+      path: 'customer-list',
+      component: CustomerListComponent
+    }, {
+      path: 'user',
+      component: UserComponent
+    }, {
+      path: 'user/:id',
+      component: UserComponent
+    }, {
+      path: 'user-list',
+      component: UserListComponent
+    }, {
+      path: 'issue',
+      component: IssueComponent
+    }, {
+      path: 'issue/:id',
+      component: IssueComponent
+    }, {
+      path: 'issue-list',
+      component: IssueListComponent
+    }, {
+      path: 'issue-attach/:id',
+      component: IssueAttachComponent
     }]
   }
 ];
