@@ -2,7 +2,7 @@
   <div class="nav-wrapper red">
     <form>
       <div class="input-field ">
-        <input id="search" name="search" type="search"  [(ngModel)]="searchText" required>
+        <input id="search" name="search" type="search" [(ngModel)]="searchText" required>
         <label class="label-icon" for="search"><i class="material-icons">search</i></label>
         <i class="material-icons" (click)="onSearch()">find_in_page</i>
       </div>
@@ -13,21 +13,22 @@
 <table>
   <thead>
     <tr>
-       <th ></th>
+      <th></th>
       <th>No</th>
       <th>Title</th>
       <th>Company</th>
       <th>User</th>
       <th>Customer</th>
       <th>Status</th>
-        <th>Edit</th>
+      <th>Edit</th>
       <th>Delete</th>
+      <th>Attach</th>
     </tr>
   </thead>
 
   <tbody>
     <tr *ngFor="let issue of issueData; let i=index;">
-      <th ></th>
+      <th></th>
       <th>{{issue.no | uppercase}}</th>
       <th>{{issue.title}}</th>
       <th>{{issue.company}}</th>
@@ -38,13 +39,17 @@
       <th>
         <a class="btn-floating btn red" (click)="onDelbtnClick(issue._id)"><i class="material-icons">delete</i></a>
       </th>
+      <th>
+        <a class="btn-floating btn green" 
+          (click)="onAttachbtnClick(issue.no);" >
+          <i class="material-icons">attach_file</i>
+        </a>
+      </th>
     </tr>
   </tbody>
 </table>
 <ul class="pagination">
-  <li class="waves-effect" *ngFor="let p of paging;let i = index;" 
-      [ngClass]="{'active':i==numPage}" 
-      (click)="gotoPage(i);"><a >{{p}}</a></li>
+  <li class="waves-effect" *ngFor="let p of paging;let i = index;" [ngClass]="{'active':i==numPage}" (click)="gotoPage(i);"><a>{{p}}</a></li>
 </ul>
 <div class="fixed-action-btn">
   <a class="btn-floating btn right" (click)="onAddbtnClick()"><i class="material-icons">add</i></a>

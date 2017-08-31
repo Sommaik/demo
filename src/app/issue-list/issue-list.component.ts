@@ -76,4 +76,8 @@ export class IssueListComponent implements OnInit {
     this.numPage=pID;
     this.onSearch();
   }
+
+  onAttachbtnClick(id) {
+    this.router.navigate(['support', 'issue-attach', id]);
+  }
 }
