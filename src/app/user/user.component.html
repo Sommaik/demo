@@ -42,3 +42,9 @@
     <a class="btn col s12" (click)="onSave();">Save</a>
   </div>
 </div>
+<input [(ngModel)]="user.firstName" 
+  type="text" class="datepicker" 
+  materialize="pickadate" 
+  [materializeParams]="[{closeOnSelect: true, format: 'dd/mm/yyyy'}]">
+
+{{user | json}}
