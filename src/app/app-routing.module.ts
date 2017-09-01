@@ -14,6 +14,7 @@ import { IssueComponent } from './issue/issue.component';
 import { IssueListComponent } from './issue-list/issue-list.component';
 import { LoginGuardService } from './login-guard.service';
 import { IssueAttachComponent } from './issue-attach/issue-attach.component';
+import { ChatComponent } from './chat/chat.component';
 const routes: Routes = [
   {
     path: '',
@@ -27,6 +28,9 @@ const routes: Routes = [
     }, {
       path: 'login',
       component: LoginComponent
+    }, {
+      path: 'chat',
+      component: ChatComponent
     }]
   },
   {

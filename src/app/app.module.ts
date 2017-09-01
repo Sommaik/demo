@@ -25,6 +25,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IssueAttachComponent } from './issue-attach/issue-attach.component';
+import { ChatComponent } from './chat/chat.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -46,7 +47,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     IssueComponent,
     IssueListComponent,
     TransfPipe,
-    IssueAttachComponent
+    IssueAttachComponent,
+    ChatComponent
   ],
   imports: [
     MaterializeModule,
