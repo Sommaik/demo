@@ -12,7 +12,7 @@
     <div class="input-field col s12 m4 offset-m4">
       <i class="material-icons prefix">lock</i>
       <input id="password" name="password" [(ngModel)]="login.password" required="required"
-             type="password" class="validate" pattern="\d{3,8}" [placeholder]="'login.password-placeholder' | translate ">
+             type="password" class="validate" [placeholder]="'login.password-placeholder' | translate ">
       <label for="password" [attr.data-error]="'login.password-error' | translate">{{ 'login.password' | translate }}</label>
     </div>
     <button type="submit" class="col s10 offset-s1 m4 offset-m4 btn blue darken-3" [disabled]="!loginForm.form.valid" >{{ 'login.login-button' | translate}}</button>
