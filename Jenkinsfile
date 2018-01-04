@@ -14,11 +14,15 @@ pipeline {
                 git 'https://github.com/Sommaik/demo'
             }
         }
-        stage('Build') {
+        stage('Install-Lib') {
             steps {
                 sh 'npm install'
-                sh 'ng build --prod'
             }
+        }
+        stage('Build') {
+          steps {
+            sh 'ng build --prod'
+          }
         }
     }
 }
