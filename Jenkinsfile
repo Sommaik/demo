@@ -36,8 +36,9 @@ node {
       }
       stage('build') {
         git 'https://github.com/Sommaik/demo'
+        sh 'cd demo'
         sh 'npm install'
-        sh 'ng serve'
+        sh 'npm run serve'
       }
   }
 }
