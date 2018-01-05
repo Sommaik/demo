@@ -35,18 +35,34 @@
 //     }
 // }
 
-node {
-  def customImage = docker.build("angular-cli")
+// node {
+//   def customImage = docker.build("angular-cli")
 
-  customImage.inside {
-      stage('Test') {
-          sh 'node --version'
-      }
-      stage('build') {
-        git 'https://github.com/Sommaik/demo'
-        sh 'cd demo'
-        sh 'npm install'
-        sh 'npm run serve'
-      }
+//   customImage.inside {
+//       stage('Test') {
+//           sh 'node --version'
+//       }
+//       stage('build') {
+//         git 'https://github.com/Sommaik/demo'
+//         sh 'cd demo'
+//         sh 'npm install'
+//         sh 'npm run serve'
+//       }
+//   }
+// }
+
+// docker build -t myapp .
+// docker run -d -p 9090:80 --name myapp myapp
+// docker push myapp:1.0
+
+node {
+  stage('sync source code'){
+     git 'https://github.com/Sommaik/demo'
+  }
+  stage('build image'){
+    sh 'docker build -t myapp .'
+  }
+  stage('run image'){
+    sh 'docker run -d -p 9090:80 --name myapp myapp'
   }
 }
