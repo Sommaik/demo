@@ -61,7 +61,7 @@ node {
   }
   stage('build image'){
     sh 'cd /var/jenkins_home/workspace/demopipe'
-    sh 'docker build -t myapp .'
+    sh 'docker build -t myapp -f /var/jenkins_home/workspace/demopipe/Dockerfile .'
   }
   stage('run image'){
     sh 'docker run -d -p 9090:80 --name myapp myapp'
