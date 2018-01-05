@@ -1,13 +1,13 @@
 pipeline {
-    // agent {
-    //     docker {
-    //         image 'node:8-alpine'
-    //         args '-p 3000:3000'
-    //     }
-    // }
     agent {
-      dockerfile true
+        docker {
+            image 'angular-cli'
+            args '-p 3000:3000'
+        }
     }
+    // agent {
+    //   dockerfile true
+    // }
     stages {
         stage('Load Code'){
             steps {
