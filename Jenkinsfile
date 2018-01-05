@@ -60,7 +60,7 @@ node {
      git 'https://github.com/Sommaik/demo'
   }
   stage('build image'){
-    sh 'pwd'
+    sh 'cd demopipe'
     sh 'docker build -t myapp .'
   }
   stage('run image'){
