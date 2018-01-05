@@ -34,13 +34,9 @@ node {
       stage('Test') {
           sh 'node --version'
       }
-      stage('sync code') {
+      stage('build') {
         git 'https://github.com/Sommaik/demo'
-      }
-      stage('build'){
         sh 'npm install'
-      }
-      stage('deploy'){
         sh 'ng serve'
       }
   }
