@@ -60,8 +60,8 @@ node {
      git 'https://github.com/Sommaik/demo'
   }
   stage('build image'){
-    sh 'cd /var/jenkins_home/workspace/demopipe'
-    sh 'docker build -t myapp -f /var/jenkins_home/workspace/demopipe/Dockerfile .'
+   // sh 'cd /var/jenkins_home/workspace/demopipe'
+    docker build -t myapp .
   }
   stage('run image'){
     sh 'docker run -d -p 9090:80 --name myapp myapp'
