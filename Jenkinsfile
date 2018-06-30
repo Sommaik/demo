@@ -36,10 +36,10 @@ pipeline {
               script {
                   try {
                     sh "docker service update --image ${env.imageName} demo"
-                    sh "echo create new service"
+                    sh "echo update service"
                   } catch (e){
                     sh "docker service create --name demo -p 80:80 ${env.imageName}"
-                    sh "echo update service"
+                    sh "echo create service"
                   }
               }
           }
