@@ -34,10 +34,12 @@ pipeline {
           agent {label 'mgr1'}
           steps {
               script {
-                  if (sh "docker service create --name demo -p 80:80 ${env.imageName}"){
-                      sh "echo create service complete"
-                  }else {
-                      sh "docker service update --image ${env.imageName} demo"
+                  try {
+                    sh "docker service update --image ${env.imageName} demo"
+                    sh "echo create new service"
+                  } catch (e){
+                    sh "docker service create --name demo -p 80:80 ${env.imageName}"
+                    sh "echo update service"
                   }
               }
           }
